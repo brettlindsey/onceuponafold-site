@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support · Once Upon a Fold</title>
+<meta name="description" content="Help and contact for Once Upon a Fold.">
+<meta property="og:title" content="Once Upon a Fold">
+<meta property="og:description" content="Help and contact for Once Upon a Fold.">
+<meta property="og:image" content="https://onceuponafold.com/assets/meadow.webp">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Nunito:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<img class="hero short" src="assets/meadow.webp" alt="Book Buddy, a smiling open book, standing on green hills under the sun, below a red ribbon reading Once Upon a Fold">
+<div class="col">
+  <nav aria-label="Site">
+    <a class="home" href="./"><img src="assets/icon.png" alt="Once Upon a Fold home"><span>Once Upon a Fold</span></a>
+    <a href="privacy.html">Privacy</a><a href="support.html" aria-current="page">Support</a>
+  </nav>
+  <section>
+    <h2>Support</h2>
+    <p>Questions, problems or an idea for a new book? Email us and we'll reply within two working days.</p>
+    <div class="mail">
+      <strong id="email">onceuponfold@gmail.com</strong>
+      <button type="button" id="copy">Copy</button>
+    </div>
+
+    <dl>
+      <dt>How do I get back a book I bought?</dt>
+      <dd>Open Settings in the app and tap Restore purchases. Books shared with Family Sharing appear automatically.</dd>
+      <dt>How does my child become the star?</dt>
+      <dd>Tap Be the Star on the bookshelf, type a first name and, if you like, add a face photo. The photo never leaves your phone.</dd>
+      <dt>How do I remove a name, photo or clip?</dt>
+      <dd>Clear them in Be the Star, or delete clips in the Star moments gallery. Deleting the app removes everything.</dd>
+      <dt>Why does the story draw itself?</dt>
+      <dd>On iPhone Duo the page draws as you open the phone. Open it slowly to watch. Closed, you can read on the front screen.</dd>
+      <dt>Can I change the language or voice?</dt>
+      <dd>Yes. Settings has nine languages, the character voices, and the option to record your own.</dd>
+      <dt>A book was bought by mistake.</dt>
+      <dd>Apple handles all payments, so request a refund at reportaproblem.apple.com.</dd>
+    </dl>
+  </section>
+  <footer>
+    <span>© 2026 Once Upon a Fold</span>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <span>onceuponfold@gmail.com</span>
+  </footer>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', function () {
+  var btn = this, el = document.getElementById('email');
+  function sel() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected'; }
+  try { navigator.clipboard.writeText(el.textContent).then(function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); }, sel); } catch (e) { sel(); }
+});
+</script>
+</body>
+</html>

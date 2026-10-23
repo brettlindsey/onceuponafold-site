@@ -1,0 +1,49 @@
+/* Layout: the app's meadow title art as a full-width header, then one quiet text column. */
+:root {
+  --bg: #FFFDF7; --ink: #2B2631; --muted: #6A6475; --red: #C8432F; --line: #ECE5D6; --leaf: #4E9F3D;
+  --display: "Fredoka", "Avenir Next Rounded", system-ui, sans-serif;
+  --body: "Nunito", "Avenir Next", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #16192A; --ink: #F3EEDF; --muted: #A9A4B8; --red: #FF8A78; --line: #2A2F47; --leaf: #7FCB6B; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #16192A; --ink: #F3EEDF; --muted: #A9A4B8; --red: #FF8A78; --line: #2A2F47; --leaf: #7FCB6B; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.65; }
+img { max-width: 100%; }
+.hero { display: block; width: 100%; height: max(240px, calc(100vw * 700 / 2440)); object-fit: cover; object-position: 50% 0; }
+.hero.short { height: max(150px, calc(100vw * 380 / 2440)); object-position: 50% 30%; }
+.col { max-width: 640px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+nav { display: flex; align-items: center; gap: 22px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+nav .home { white-space: nowrap; display: flex; align-items: center; gap: 10px; margin-right: auto; font-family: var(--display); font-weight: 600; font-size: 18px; }
+nav .home img { width: 30px; height: 30px; border-radius: 8px; }
+nav a { color: var(--ink); text-decoration: none; font-weight: 700; }
+@media (max-width: 420px) { nav .home span { display: none; } }
+nav a:hover, nav a[aria-current] { color: var(--red); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+a { color: var(--red); }
+section { padding-block: 40px 8px; }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(36px, 7vw, 52px); line-height: 1.08; margin: 0 0 14px; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 30px; line-height: 1.2; margin: 0 0 4px; }
+.date { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+h3 { font-size: 17px; font-weight: 700; margin: 28px 0 4px; }
+p { margin: 0 0 12px; }
+ul { margin: 0 0 12px; padding-left: 1.1em; }
+li { margin-bottom: 6px; }
+.lead { font-size: 20px; color: var(--muted); max-width: 30ch; }
+.badge { display: inline-block; margin: 14px 0 6px; line-height: 0; }
+.badge img { height: 54px; width: auto; }
+.small { font-size: 14px; color: var(--muted); }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding-block: 36px 8px; border-top: 1px solid var(--line); margin-top: 32px; }
+.trio h3 { margin: 0 0 4px; font-family: var(--display); font-weight: 600; font-size: 20px; }
+.trio p { color: var(--muted); font-size: 16px; margin: 0; }
+@media (max-width: 600px) { .trio { grid-template-columns: 1fr; gap: 18px; } }
+.mail { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 16px 0 8px; }
+.mail strong { font-size: 20px; color: var(--red); user-select: all; word-break: break-all; }
+.mail button { font: 700 14px var(--body); color: var(--muted); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+dl { margin: 0; }
+dt { font-weight: 700; margin-top: 22px; }
+dd { margin: 4px 0 0; color: var(--muted); }
+footer { padding-block: 48px 40px; color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+footer a { color: var(--muted); }
