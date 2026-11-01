@@ -130,3 +130,18 @@ nav .social { margin-left: 6px; padding-left: 16px; border-left: 1px solid var(-
 .social svg { width: 19px; height: 19px; }
 footer .social { margin-left: auto; }
 @media (max-width: 520px) { nav .social { display: none; } }
+
+/* A quiet menu button (three short lines) that opens a small paper card */
+.menu { position: relative; margin-left: auto; }
+.menu summary { list-style: none; cursor: pointer; width: 40px; height: 40px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; opacity: .7; transition: opacity .2s, background .2s; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu summary:hover, .menu[open] summary { opacity: 1; background: rgba(43, 38, 49, .06); }
+.menu summary span { display: block; width: 20px; height: 2px; border-radius: 2px; background: var(--ink); transition: transform .2s, opacity .2s; }
+.menu[open] summary span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu[open] summary span:nth-child(2) { opacity: 0; }
+.menu[open] summary span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-panel { position: absolute; right: 0; top: 48px; z-index: 10; min-width: 190px; display: flex; flex-direction: column; gap: 4px; padding: 12px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 14px 36px rgba(43, 38, 49, .14); }
+.menu-panel > a { padding: 8px 10px; border-radius: 10px; font-weight: 700; }
+.menu-panel > a:hover { background: rgba(43, 38, 49, .05); }
+.menu-panel .social { padding: 10px 10px 4px; margin: 6px 0 0; border-top: 1px solid var(--line); border-left: 0; gap: 18px; }
+nav .menu-panel .social { display: inline-flex; }
