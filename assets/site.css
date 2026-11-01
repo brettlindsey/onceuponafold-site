@@ -121,3 +121,12 @@ footer a { color: var(--muted); }
 .device.duo .screen { position: relative; }
 .device.duo .screen::after { content: ""; position: absolute; top: 10px; bottom: 10px; left: 50%; width: 3px; transform: translateX(-50%); background: linear-gradient(rgba(0,0,0,.25), rgba(255,255,255,.35), rgba(0,0,0,.25)); }
 @media (max-width: 760px) { .device-row { grid-template-columns: 1fr; gap: 26px; } }
+
+/* Social links: small, quiet icons that light up on hover */
+.social { display: inline-flex; align-items: center; gap: 14px; }
+nav .social { margin-left: 6px; padding-left: 16px; border-left: 1px solid var(--line); }
+.social a { display: inline-flex; color: var(--muted) !important; opacity: .75; transition: opacity .2s, color .2s, transform .2s; }
+.social a:hover { opacity: 1; color: var(--red) !important; transform: translateY(-1px); }
+.social svg { width: 19px; height: 19px; }
+footer .social { margin-left: auto; }
+@media (max-width: 520px) { nav .social { display: none; } }
