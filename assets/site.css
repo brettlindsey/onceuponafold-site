@@ -93,3 +93,16 @@ footer a { color: var(--muted); }
 .safe .gran { height: 130px; width: auto; flex: none; filter: drop-shadow(0 6px 6px rgba(43, 38, 49, .15)); }
 @media (max-width: 600px) { .safe { flex-direction: column; align-items: flex-start; } }
 .home footer { padding-block: 56px 40px; }
+
+/* Privacy and support pages: the homepage's look, a smaller header */
+.page-head { background: linear-gradient(#E3F1F8, #FFFBF2 85%); }
+.page-head nav a[aria-current] { color: var(--red); }
+.mini-cast { display: flex; justify-content: center; align-items: flex-end; gap: 6px; padding-top: 10px; }
+.mini-cast img { height: 92px; width: auto; filter: drop-shadow(0 6px 6px rgba(43, 38, 49, .16)); animation: bob 5s ease-in-out infinite; }
+.mini-cast img:nth-child(2) { animation-delay: 1.4s; }
+.ground.thin { height: 18px; }
+.page { max-width: 760px; padding-top: 40px; }
+.page h2 { font-size: 36px; }
+.page h3 { font-family: var(--display); font-weight: 600; font-size: 20px; margin-top: 30px; }
+.page p, .page li, .page dd { color: var(--muted); }
+.page dt { font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--ink); }

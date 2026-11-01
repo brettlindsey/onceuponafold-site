@@ -82,11 +82,18 @@
   <span>© 2026 Once Upon a Fold</span>
   <a href="privacy.html">Privacy</a>
   <a href="support.html">Support</a>
-  <span>onceuponfold@gmail.com</span>
+  <a data-mail href="support.html">email us</a>
 </footer>
 <script>
 var h = location.hash.slice(1);
 if (h === 'privacy' || h === 'support') location.replace(h + '.html');
+</script>
+<script>
+document.querySelectorAll('[data-mail]').forEach(function (el) {
+  var a = ['onceuponfold', 'gmail.com'].join('@');
+  el.textContent = a;
+  if (el.tagName === 'A') el.href = 'mailto:' + a;
+});
 </script>
 </body>
 </html>

@@ -13,18 +13,23 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Nunito:wght@400;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-<img class="hero short" src="assets/meadow.webp" alt="Book Buddy, a smiling open book, standing on green hills under the sun, below a red ribbon reading Once Upon a Fold">
-<div class="col">
-  <nav aria-label="Site">
-    <a class="home" href="./"><img src="assets/icon.png" alt="Once Upon a Fold home"><span>Once Upon a Fold</span></a>
-    <a href="privacy.html">Privacy</a><a href="support.html" aria-current="page">Support</a>
+<body class="home">
+<header class="page-head">
+  <nav aria-label="Site" class="wide">
+    <a class="home-link" href="./"><img src="assets/icon.png" alt="Once Upon a Fold home"><span>Once Upon a Fold</span></a>
+    <a href="./#books">Books</a><a href="privacy.html">Privacy</a><a href="support.html" aria-current="page">Support</a>
   </nav>
+  <div class="mini-cast" aria-hidden="true">
+    <img src="assets/chars/goldilocks.webp" alt=""><img src="assets/chars/wolf.webp" alt="">
+  </div>
+  <div class="ground thin" aria-hidden="true"></div>
+</header>
+<main class="page wide">
   <section>
     <h2>Support</h2>
     <p>Questions, problems or an idea for a new book? Email us and we'll reply within two working days.</p>
     <div class="mail">
-      <strong id="email">onceuponfold@gmail.com</strong>
+      <strong id="email" data-mail>onceuponfold [at] gmail [dot] com</strong>
       <button type="button" id="copy">Copy</button>
     </div>
 
@@ -43,18 +48,25 @@
       <dd>Apple handles all payments, so request a refund at reportaproblem.apple.com.</dd>
     </dl>
   </section>
-  <footer>
+</main>
+<footer class="wide">
     <span>© 2026 Once Upon a Fold</span>
     <a href="privacy.html">Privacy</a>
     <a href="support.html">Support</a>
-    <span>onceuponfold@gmail.com</span>
-  </footer>
-</div>
+    <a data-mail href="support.html">email us</a>
+</footer>
 <script>
 document.getElementById('copy').addEventListener('click', function () {
   var btn = this, el = document.getElementById('email');
   function sel() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected'; }
   try { navigator.clipboard.writeText(el.textContent).then(function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); }, sel); } catch (e) { sel(); }
+});
+</script>
+<script>
+document.querySelectorAll('[data-mail]').forEach(function (el) {
+  var a = ['onceuponfold', 'gmail.com'].join('@');
+  el.textContent = a;
+  if (el.tagName === 'A') el.href = 'mailto:' + a;
 });
 </script>
 </body>
