@@ -144,3 +144,15 @@ footer .social { margin-left: auto; }
 .menu-panel > a:hover { background: rgba(74, 46, 28, .05); }
 .menu-panel .social { padding: 10px 10px 4px; margin: 6px 0 0; border-top: 1px solid var(--line); border-left: 0; gap: 18px; }
 nav .menu-panel .social { display: inline-flex; }
+
+/* The five reading languages: little postage-stamp cards, like the app's language picker */
+.languages h2, .languages > p { text-align: center; margin-left: auto; margin-right: auto; }
+.flags { list-style: none; padding: 0; margin: 26px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.flags li { width: 132px; padding: 14px 10px 12px; text-align: center; background: #F5ECD8; border: 2px dashed rgba(74, 46, 28, .35); border-radius: 6px; box-shadow: 0 6px 14px rgba(74, 46, 28, .12); transition: transform .3s cubic-bezier(.3, 1.6, .5, 1); }
+.flags li:nth-child(odd) { transform: rotate(-1.5deg); }
+.flags li:nth-child(even) { transform: rotate(1.2deg); }
+.flags li:hover { transform: translateY(-4px) rotate(0); }
+.flags .flag { display: block; font-size: 38px; line-height: 1.1; }
+.flags strong { display: block; font-family: var(--display); font-size: 19px; color: #4A2E1C; margin-top: 4px; }
+.flags li > span:last-child { display: block; font-size: 14px; color: #7A6250; }
+@media (max-width: 600px) { .flags li { width: calc(50% - 10px); } }
